@@ -1,0 +1,241 @@
+<div class="card personnel-page border-0 h-100">
+  <div class="card-body p-0">
+    <div class="row m-0">
+      <div class="col-md-3 h-100 personnel-grid p-1">
+        <div class="card">
+          <div class="card-header d-flex gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              Add
+            </button>
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              Delete
+            </button>
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              Back
+            </button>
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              Batch Create
+            </button>
+          </div>
+          <div class="card-body p-1">
+            <table class="table table-striped table-sm mb-0">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Company</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Badge No</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(personnel of this.badgeList; track $index){
+                <tr [ngClass]="{ 'select-person': selectedBadge.id==personnel.id}"
+                  (click)="onPersonnelSelect(personnel)">
+                  <td>
+                    @if(personnel.id==selectedBadge.id)
+                    {<i class="fa fa-check-square-o" aria-hidden="true"></i> }
+                  </td>
+                  <td>{{personnel.companyName}}</td>
+                  <td>{{personnel.firstName}}</td>
+                  <td>{{personnel.lastName}}</td>
+                  <td>{{personnel.badge}}</td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer fw-bold">
+            <span>Total : [ {{this.badgeList.length}} ]</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 personnel-input p-1">
+        <div class="card personnel-input-card">
+          <div class="card-header d-flex gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-floppy-o" aria-hidden="true"></i>
+              SAVE
+            </button>
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-ban" aria-hidden="true"></i>
+              CANCEL
+            </button>
+            <button class="btn btn-sm btn-outline-secondary btn-font-size">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+              ADD SUB BADGE
+            </button>
+          </div>
+          <div class="card-body p-0 personnel-input-card-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#PersonnelInformation">Personnel Information</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="card">
+              <div class="tab-content">
+                <div id="PersonnelInformation" class="container tab-pane active m-0 p-0">
+                  <div class="row m-0">
+                    <div class="col-md-5 p-1 personnel-input-group">
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Company</span>
+                        <input type="text" class="form-control" [readOnly]="true"
+                          [(ngModel)]="this.selectedBadge.companyName">
+                      </div>
+                      <span>Personal Information</span>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Last Name</span>
+                        <input type="text" class="form-control" [(ngModel)]="this.selectedBadge.lastName">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">First Name</span>
+                        <input type="text" class="form-control" [(ngModel)]="this.selectedBadge.firstName">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Middle Name</span>
+                        <input type="text" class="form-control" [(ngModel)]="this.selectedBadge.middleName">
+                      </div>
+                      <span>Credential Information</span>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Badge Number / PIN Only</span>
+                        <input type="text" class="form-control" [(ngModel)]="this.selectedBadge.badge">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Facility No</span>
+                        <input type="text" class="form-control" [disabled]="!this.selectedBadge.facility"
+                          [(ngModel)]="this.selectedBadge.facilityDisplay">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Two Factor PIN</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Re-Issue</span>
+                        <input type="text" class="form-control" [disabled]="!this.selectedBadge.issue"
+                          [(ngModel)]="this.selectedBadge.reIssue">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Embossed ID</span>
+                        <input type="text" class="form-control" [(ngModel)]="this.selectedBadge.embossed">
+                      </div>
+                      <span>Access Information</span>
+                      <!-- <div class="input-group mb-1 input-group-sm">
+                      <div class="input-group-text d-flex gap-2">
+                       <span>Badge Enable</span> <input type="checkbox">
+                      </div>
+                    </div> -->
+                      <div class="form-check form-switch">
+                        <label class="form-check-label" for="mySwitch">Badge Enable</label>
+                        <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes"
+                          [checked]="this.selectedBadge.enabled">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Partition Group</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Holiday Calendar</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Access Time (secs)</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Activation Date & Time</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Expiration Date & Time</span>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group mb-1 input-group-sm">
+                        <span class="input-group-text personnel-input-group-label">Badge Use Limit</span>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-5 p-1 ">
+                      <div class="card access-group-card">
+                        <div class="card-header"><span>Access Group</span></div>
+                        <div class="card-body p-1">
+                          <table class="table table-striped table-sm">
+                            <thead>
+                              <tr>
+                                <th>Seq.No</th>
+                                <th>Access Group</th>
+                                <th>Activation Date & Time</th>
+                                <th>Expiration Date & Time</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              @for(personnel of this.badgeList; track $index){
+                              <tr>
+                                <td>{{$index+1}}</td>
+                                <td>{{personnel.companyName}}</td>
+                                <td>{{personnel.firstName}}</td>
+                                <td>{{personnel.lastName}}</td>
+                              </tr>
+                              }
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 p-1">
+                      <div class="card">
+                        <div class="card-header">photo</div>
+                        <img class="card-img-top" [src]="this.selectedBadge.imgUrl || ''" alt="Card image"
+                          height="130" />
+                        <div class="card-body">
+                          <!-- <h4 class="card-title">John Doe</h4> -->
+                          <p class="card-text">
+                            <b>Note: </b>Any imported photo will be resized to
+                            300px X 300px
+                          </p>
+                        </div>
+                        <div class="card-footer d-flex gap-2">
+                          <button class="btn btn-sm btn-outline-secondary btn-font-size">Import Photo</button>
+                          <button class="btn btn-sm btn-outline-secondary btn-font-size">Crear Photo</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="menu1" class="container tab-pane fade m-0 p-0">
+                  <br>
+                  <h3>Menu 1</h3>
+                  <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea
+                    commodo consequat.
+                  </p>
+                </div>
+                <div id="menu2" class="container tab-pane fade m-0 p-0">
+                  <br>
+                  <h3>Menu 2</h3>
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                    laudantium, totam rem aperiam.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>CardAccess.Application</RootNamespace>
+    <AssemblyName>CardAccess.Application</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Personnel\DTO\**" />
+    <EmbeddedResource Remove="Personnel\DTO\**" />
+    <None Remove="Personnel\DTO\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" />
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="Dapper" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="System.Drawing.Common" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\CardAccess.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:61846",
+      "sslPort": 44325
+    }
+  },
+  "profiles": {
+    "CardAccess.Server": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api",
+      "applicationUrl": "https://localhost:7100;http://localhost:5116",
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.personnel-page {
+    .btn-font-size{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .personnel-grid {
+        font-size: 11px;
+
+        .select-person {
+            td {
+                background-color: #cee7e7;
+
+                .fa {
+                    color: royalblue
+                }
+            }
+        }
+    }
+    .personnel-input{
+        .personnel-input-card{
+            .personnel-input-card-body{
+                .personnel-input-group{
+                    .personnel-input-group-label{
+                        width: 37%;
+                    }
+                }
+                .access-group-card{
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+
+    // @media only screen and (max-width: 768px) {
+
+    //     /* For mobile phones: */
+    //     .personnel-body {
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+
+    // }
+
+    .input-group-text {
+        font-size: 12px;
+    }
+}

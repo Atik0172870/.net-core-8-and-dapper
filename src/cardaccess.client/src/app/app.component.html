@@ -1,0 +1,31 @@
+<!-- app.component.html -->
+<main class="p-0 m-0 main-container container-fluid">
+  <div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+
+      <span>
+        <img src="../assets/img/mvp.png" class="rounded-pill" alt="Cinque Terre" height="52.8">
+      </span>
+      <app-nav-menu></app-nav-menu>
+      <span>Personnel</span>
+    </div>
+    <div class="card-body home-body d-flex align-items-center gap-1 p-0">
+      <div class="border-end left-menu h-100 p-0 bg-light d-flex flex-column gap-3">
+        <div class="dropdown dropend d-flex align-items-center" *ngFor="let item of menuItem; trackBy: trackByIndex">
+          <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+            <i [class]="item.menuIcon" aria-hidden="true"></i>
+          </button>
+          <ul class="dropdown-menu shadow">
+            <li class="dropdown-item btn" *ngFor="let menu of item.menu; trackBy: trackByIndex" (click)="navigateToPage(menu)">
+              <i [class]="menu.icon" aria-hidden="true"></i> {{ menu.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-body h-100 p-0 overflow-auto w-100">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="card-footer">Footer</div>
+  </div>
+</main>

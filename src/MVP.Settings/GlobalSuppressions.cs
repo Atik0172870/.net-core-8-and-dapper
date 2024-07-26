@@ -1,0 +1,33 @@
+﻿// This file is used by Code Analysis to maintain SuppressMessage
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given
+// a specific target and scoped to a namespace, type, member, etc.
+
+using System.Diagnostics.CodeAnalysis;
+
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.ShowPasswordDialog~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.HidePasswordDialog(System.Boolean)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.HidePasswordDialog(System.Boolean)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.WriteIsServer(System.Boolean)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.CheckServer~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.ChangeServiceMode(System.String,System.Boolean)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.ChangeServiceMode(System.String,System.Boolean)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.SetServiceStartMode(System.String,System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartService(System.String,System.String,Microsoft.Extensions.Logging.ILogger)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.RestartService(System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartServiceIfNotRunning(System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartLocalSqlServer(System.Boolean)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StopService(System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartService(System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ODBCManager.GetInstalledDrivers~System.String[]")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ODBCManager.DSNExists(System.String)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ODBCManager.CreateDSN(System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.WriteToRegistry(System.Object)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ODBCManager.RemoveDSN(System.String)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.WriteToRegistry(Microsoft.Win32.RegistryKey,System.String,System.String,System.Object)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.WriteGuiRegistry(System.String,System.Object)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.ReadGuiRegistry(System.String)~System.String")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CommonSettings.ReadRegistry(Microsoft.Win32.RegistryKey,System.String,System.String,System.Object)~System.Boolean")]
+[assembly: SuppressMessage("Interoperability", "SYSLIB1054:Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.CardAccessSettings.IsWow64Process(System.IntPtr,System.Boolean@)~System.Boolean")]
+[assembly: SuppressMessage("Usage", "CA2253:Named placeholders should not be numeric values", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartService(System.String,System.String,Microsoft.Extensions.Logging.ILogger)~System.Boolean")]
+[assembly: SuppressMessage("Usage", "CA2253:Named placeholders should not be numeric values", Justification = "<Pending>", Scope = "member", Target = "~M:CardAccess.Settings.ServiceManager.StartSqlServerByConfigSettings(System.Data.DataSet,Microsoft.Extensions.Logging.ILogger)~System.Boolean")]
